@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +10,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #111111;
+  background: #0a0a0a;
   color: #ffffff;
 }
 
@@ -15,37 +19,55 @@ a {
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
-  padding: 80px 20px;
   display: flex;
   align-items: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('./IMG_8864.JPG') center/cover no-repeat;
+  opacity: 0.35;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero__content {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .hero__tag {
   margin-bottom: 16px;
   font-size: 14px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #9f9f9f;
+  color: #8f8f8f;
 }
 
 .hero__title {
-  font-size: 56px;
+  font-size: 64px;
   line-height: 1.05;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .hero__text {
-  max-width: 620px;
+  max-width: 600px;
   font-size: 18px;
   line-height: 1.6;
   color: #cfcfcf;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .hero__actions {
@@ -58,16 +80,78 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0 24px;
+  min-height: 54px;
+  padding: 0 28px;
   border-radius: 999px;
   background: #ffffff;
-  color: #111111;
+  color: #000000;
   font-weight: 700;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #eaeaea;
 }
 
 .button--ghost {
   background: transparent;
   color: #ffffff;
-  border: 1px solid #333333;
+  border: 1px solid #333;
+}
+
+.button--ghost:hover {
+  background: #ffffff;
+  color: #000;
+}
+
+.sketches {
+  min-height: 100vh;
+  padding: 120px 20px;
+  background: #111111;
+  display: flex;
+  align-items: center;
+}
+
+.sketches__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  margin-bottom: 16px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+
+.section-title {
+  font-size: 56px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.section-text {
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #cfcfcf;
+}
+
+@media (max-width: 768px) {
+  .hero__title,
+  .section-title {
+    font-size: 40px;
+  }
+
+  .hero__text,
+  .section-text {
+    font-size: 16px;
+  }
+
+  .hero,
+  .sketches {
+    padding: 80px 20px;
+  }
 }
