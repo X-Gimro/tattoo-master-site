@@ -38,42 +38,50 @@ app.innerHTML = `
           alt="Logo"
         />
       </section>
+      <section class="works-header" id="works">
+  <h2 class="works-header__title">примеры работ</h2>
+</section>
+<div class="works-content">
 
-      <section class="works-page" id="works">
-        <div class="works-page__top">
-          <p class="works-page__label">portfolio</p>
-          <h2 class="works-page__title">работы</h2>
-          <p class="works-page__subtitle">
-            мои работы и эскизы в авторском стиле
-          </p>
-        </div>
+  <!-- БОЛЬШАЯ КАРТИНКА -->
+  <div class="works-big">
+    <img src="./work-big.png" alt="Большая работа" />
+    <div class="works-big-text">
+    <h2>жопа тату</h2>
+    <p>тут кароче описание жопы надо и тату ялялялялял</p>
+  </div>
+  </div>
 
-        <div class="works-grid">
-          <article class="work-card">
-            <img class="work-card__image" src="./work-1.png" alt="Работа 1" />
-          </article>
+  <!-- ПРАВАЯ КОЛОНКА -->
+  <div class="works-small-list">
 
-          <article class="work-card">
-            <img class="work-card__image" src="./work-2.png" alt="Работа 2" />
-          </article>
+    <div class="works-small-item">
+      <img src="./work-small-1.png" alt="Работа 1" />
+      <div class="works-small-text">
+        <h3>тату жени</h3>
+        <p>описание</p>
+      </div>
+    </div>
 
-          <article class="work-card">
-            <img class="work-card__image" src="./work-3.png" alt="Работа 3" />
-          </article>
+    <div class="works-small-item">
+      <img src="./work-small-2.png" alt="Работа 2" />
+      <div class="works-small-text">
+        <h3>тату рука</h3>
+        <p>описание</p>
+      </div>
+    </div>
 
-          <article class="work-card">
-            <img class="work-card__image" src="./work-4.png" alt="Работа 4" />
-          </article>
+    <div class="works-small-item">
+      <img src="./work-small-3.png" alt="Работа 3" />
+      <div class="works-small-text">
+        <h3>тату нога</h3>
+        <p>описание</p>
+      </div>
+    </div>
 
-          <article class="work-card">
-            <img class="work-card__image" src="./work-5.png" alt="Работа 5" />
-          </article>
+  </div>
 
-          <article class="work-card">
-            <img class="work-card__image" src="./work-6.png" alt="Работа 6" />
-          </article>
-        </div>
-      </section>
+</div>
     </main>
 
   </div>

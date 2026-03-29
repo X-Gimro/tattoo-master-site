@@ -161,58 +161,456 @@ html {
   font-size: 24px;
 }
 
-.works-page {
-  width: 1218px;
-  margin: 100px auto 0;
-  padding-bottom: 120px;
-  scroll-margin-top: 100px;
+/* === ШАПКА ПРИМЕРЫ РАБОТ === */
+.works-header {
+  width: 1123px;
+  height: 64px; /* было 76 */
+  margin: 150px auto 0;
+  background: #D9D9D9;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  padding-left: 28px;
 }
 
-.works-page__top {
-  margin-bottom: 40px;
-}
-
-.works-page__label {
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #8d8d8d;
-  margin-bottom: 16px;
-  letter-spacing: 0.04em;
-}
-
-.works-page__title {
+.works-header__title {
   font-family: "Actay", sans-serif;
-  font-size: 64px;
+  font-size: 34px; /* было 42 */
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
   color: #000;
-  margin-bottom: 14px;
+}
+/* === КОНТЕНТ ПРИМЕРЫ РАБОТ === */
+.works-content {
+  width: 1123px;
+  margin: 40px auto 0;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
 }
 
-.works-page__subtitle {
-  max-width: 520px;
-  font-size: 22px;
-  line-height: 1.35;
-  color: #1c1c1c;
-}
+/* === БОЛЬШАЯ КАРТИНКА === */
+.works-big img {
+  width: 390px;
+  height: 476px;
 
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* === СПИСОК СПРАВА === */
+.works-small-list {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
-.work-card {
-  background: #f3f3f3;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+/* === ОДИН ЭЛЕМЕНТ === */
+.works-small-item {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  gap: 22px; /* было 28 */
 }
 
-.work-card__image {
-  width: 100%;
-  height: 420px;
+
+.works-small-item img {
+  width: 160px;   /* было 190 */
+  height: 160px;  /* было 190 */
+
   object-fit: cover;
-  display: block;
+  border-radius: 20px;
+
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* === ТЕКСТ СПРАВА === */
+.works-small-text {
+  padding-top: 6px;
+}
+
+.works-small-text h3 {
+  font-family: "Actay", sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.works-small-text p {
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+#works {
+  scroll-margin-top: 40px;
+}
+
+.works-big-text {
+  margin-top: 16px;
+}
+
+.works-big-text h2 {
+  font-family: "Actay", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.works-big-text p {
+  font-size: 20px;
+  line-height: 1.3;
+  max-width: 390px;
+}
+
+/* =========================
+   АДАПТИВ ПОД ПЛАНШЕТЫ
+   ========================= */
+@media (max-width: 1279px) {
+  .layout {
+    width: calc(100% - 40px);
+  }
+
+  .header {
+    width: calc(100% - 40px);
+  }
+
+  .hero-card {
+    width: 100%;
+    height: 250px;
+  }
+
+  .logo-section {
+    width: 100%;
+  }
+
+  .logo-section__image {
+    width: 100%;
+  }
+
+  .works-header {
+    width: 100%;
+    margin: 120px auto 0;
+  }
+
+  .works-content {
+    width: 100%;
+    gap: 32px;
+  }
+
+  .works-big img {
+    width: 320px;
+    height: 390px;
+  }
+
+  .works-big-text h2 {
+    font-size: 28px;
+  }
+
+  .works-big-text p {
+    font-size: 18px;
+    max-width: 320px;
+  }
+
+  .works-small-item img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .works-small-text h3 {
+    font-size: 26px;
+  }
+
+  .works-small-text p {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   АДАПТИВ ПОД ПЛАНШЕТЫ / МАЛЕНЬКИЕ НОУТЫ
+   ========================= */
+@media (max-width: 1024px) {
+  .header {
+    height: auto;
+    min-height: 59px;
+    padding: 16px 24px;
+    align-items: center;
+  }
+
+  .header__logo {
+    position: static;
+    font-size: 22px;
+  }
+
+  .header__nav {
+    gap: 18px;
+    margin-right: 0;
+  }
+
+  .header__nav a,
+  .header__link {
+    font-size: 20px;
+  }
+
+  .hero-card {
+    height: 220px;
+    margin-top: 50px;
+  }
+
+  .hero-card__title {
+    left: 40px;
+    top: 98px;
+    width: 360px;
+    height: auto;
+    font-size: 28px;
+  }
+
+  .hero-card__star {
+    left: 8px;
+    top: 18px;
+    width: 210px;
+    height: 200px;
+  }
+
+  .works-header {
+    height: 58px;
+    margin-top: 120px;
+    padding-left: 22px;
+  }
+
+  .works-header__title {
+    font-size: 28px;
+  }
+
+  .works-content {
+    gap: 24px;
+  }
+
+  .works-big img {
+    width: 280px;
+    height: 360px;
+  }
+
+  .works-big-text h2 {
+    font-size: 24px;
+  }
+
+  .works-big-text p {
+    font-size: 16px;
+    max-width: 280px;
+  }
+
+  .works-small-item {
+    gap: 16px;
+  }
+
+  .works-small-item img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .works-small-text h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .works-small-text p {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   АДАПТИВ ПОД ТЕЛЕФОНЫ
+   ========================= */
+@media (max-width: 767px) {
+  .layout {
+    width: calc(100% - 24px);
+  }
+
+  .header {
+    width: calc(100% - 24px);
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header__logo {
+    position: static;
+    font-size: 18px;
+  }
+
+  .header__nav {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .header__nav a,
+  .header__link {
+    font-size: 16px;
+  }
+
+  .hero-card {
+    width: 100%;
+    height: 170px;
+    margin-top: 28px;
+  }
+
+  .hero-card__image-wrap {
+    border-radius: 16px;
+  }
+
+  .hero-card__image {
+    height: 100%;
+    transform: none;
+  }
+
+  .hero-card__star {
+    left: 8px;
+    top: 10px;
+    width: 120px;
+    height: 115px;
+  }
+
+  .hero-card__title {
+    left: 18px;
+    top: 72px;
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .logo-section {
+    width: 100%;
+    margin-top: 32px;
+  }
+
+  .logo-section__image {
+    width: 100%;
+  }
+
+  .works-header {
+    width: 100%;
+    height: 50px;
+    margin-top: 80px;
+    border-radius: 16px;
+    padding-left: 16px;
+  }
+
+  .works-header__title {
+    font-size: 22px;
+  }
+
+  .works-content {
+    width: 100%;
+    margin-top: 24px;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .works-big {
+    width: 100%;
+  }
+
+  .works-big img {
+    width: 100%;
+    height: 360px;
+  }
+
+  .works-big-text {
+    margin-top: 14px;
+  }
+
+  .works-big-text h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .works-big-text p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .works-small-list {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .works-small-item {
+    gap: 14px;
+    align-items: center;
+  }
+
+  .works-small-item img {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+  }
+
+  .works-small-text {
+    padding-top: 0;
+  }
+
+  .works-small-text h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .works-small-text p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  #works {
+    scroll-margin-top: 24px;
+  }
+
+  body {
+    padding-bottom: 40px;
+  }
+}
+
+/* =========================
+   ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+   ========================= */
+@media (max-width: 390px) {
+  .hero-card {
+    height: 155px;
+  }
+
+  .hero-card__star {
+    width: 105px;
+    height: 100px;
+  }
+
+  .hero-card__title {
+    top: 64px;
+    width: 170px;
+    font-size: 14px;
+  }
+
+  .works-big img {
+    height: 320px;
+  }
+
+  .works-header__title {
+    font-size: 20px;
+  }
 }
