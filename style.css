@@ -614,3 +614,74 @@ body {
     font-size: 20px;
   }
 }
+
+/* =========================
+   ГИБКИЙ ДЕСКТОП (важно)
+   ========================= */
+
+.layout,
+.header,
+.hero-card,
+.logo-section,
+.works-content,
+.works-header {
+  max-width: 1218px;
+  width: calc(100% - 40px);
+}
+
+/* =========================
+   КОГДА ЭКРАН СУЖАЕТСЯ
+   ========================= */
+@media (max-width: 1218px) {
+  .hero-card {
+    height: 240px;
+  }
+
+  .hero-card__title {
+    font-size: 30px;
+    left: 40px;
+    top: 110px;
+  }
+
+  .hero-card__star {
+    width: 220px;
+    height: 210px;
+  }
+
+  .works-content {
+    gap: 32px;
+  }
+
+  .works-big img {
+    width: 320px;
+    height: 400px;
+  }
+
+  .works-big-text p {
+    max-width: 320px;
+  }
+}
+
+/* =========================
+   ЕЩЁ УЖЕ (почти планшет)
+   ========================= */
+@media (max-width: 1000px) {
+  .works-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .works-big img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .works-big-text p {
+    max-width: 100%;
+  }
+
+  .works-small-list {
+    width: 100%;
+  }
+}
