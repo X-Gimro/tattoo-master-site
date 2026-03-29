@@ -1,76 +1,42 @@
 const app = document.querySelector('#app');
 
 app.innerHTML = `
-  <section class="hero" id="top">
-    <div class="hero__overlay"></div>
+  <div class="page">
+    <header class="header">
+      <div class="header__logo">loraxultrasound.tatt</div>
 
-    <div class="hero__content">
-      <p class="hero__tag">Tattoo artist</p>
+      <nav class="header__nav">
+        <a href="#home" class="header__link">главная</a>
+        <a href="#works" class="header__link">работы</a>
+        <a href="#sketches" class="header__link">эскизы</a>
+        <a href="#socials" class="header__link">соцсети</a>
+      </nav>
+    </header>
 
-      <h1 class="hero__title">
-        Авторские татуировки<br />
-        и уникальные эскизы
-      </h1>
+    <main class="layout">
+      <section class="hero-card" id="home">
+        <div class="hero-card__image-wrap">
+          <img
+            class="hero-card__image"
+            src="./one.png"
+            alt="Тату эскиз"
+          />
 
-      <p class="hero__text">
-        Работаю в индивидуальном стиле, подбираю эскиз под тебя.
-        Запись и консультация — в Telegram.
-      </p>
+          <h1 class="hero-card__title">
+            МОДЕЛЬНЫЕ ПРАЙСЫ
+          </h1>
 
-      <div class="hero__actions">
-        <a class="button" href="https://t.me/username" target="_blank">
-          Записаться
-        </a>
-        <a class="button button--ghost" href="#sketches">
-          Эскизы
-        </a>
-      </div>
-    </div>
-  </section>
+          <div class="hero-card__star"></div>
+        </div>
+      </section>
 
-  <section class="sketches" id="sketches">
-    <div class="sketches__container">
-      <p class="section-tag">Sketches</p>
-      <h2 class="section-title">Эскизы</h2>
-      <p class="section-text">
-        Здесь будут размещены авторские эскизы. Часть работ будет доступна для
-        просмотра, а полный доступ откроется после оплаты.
-      </p>
-    </div>
-  </section>
+      <section class="logo-section">
+        <img
+          class="logo-section__image"
+          src="./logo.png"
+          alt="Logo"
+        />
+      </section>
+    </main>
+  </div>
 `;
-const scrollBtn = document.querySelector('a[href="#sketches"]');
-
-scrollBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  const target = document.querySelector('#sketches');
-  const start = window.scrollY;
-  const end = target.offsetTop;
-
-  const duration = 1200; // время (чем больше — тем плавнее)
-  let startTime = null;
-
-  function easeInOutCubic(t) {
-    return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
-  function animation(currentTime) {
-    if (!startTime) startTime = currentTime;
-
-    const time = currentTime - startTime;
-    const progress = Math.min(time / duration, 1);
-
-    const ease = easeInOutCubic(progress);
-
-    window.scrollTo(0, start + (end - start) * ease);
-
-    if (time < duration) {
-      requestAnimationFrame(animation);
-    }
-  }
-
-  requestAnimationFrame(animation);
-});

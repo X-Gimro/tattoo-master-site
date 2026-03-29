@@ -1,157 +1,152 @@
-html {
-  scroll-behavior: smooth;
-}
-
+/* === БАЗА === */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
 }
 
-a {
-  text-decoration: none;
+/* === ОБЩАЯ СТРАНИЦА === */
+.page {
+  width: 100%;
 }
 
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 20px;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('./IMG_8864.JPG') center/cover no-repeat;
-  opacity: 0.35;
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.hero__content {
-  position: relative;
-  max-width: 900px;
+/* === ОСНОВНОЙ КОНТЕЙНЕР === */
+.layout {
+  width: 1218px;
   margin: 0 auto;
-  z-index: 2;
 }
 
-.hero__tag {
-  margin-bottom: 16px;
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #8f8f8f;
-}
-
-.hero__title {
-  font-size: 64px;
-  line-height: 1.05;
-  margin-bottom: 24px;
-}
-
-.hero__text {
-  max-width: 600px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #cfcfcf;
-  margin-bottom: 40px;
-}
-
-.hero__actions {
+/* === ШАПКА === */
+.header {
+  position: relative;
+  width: 1218px;
+  height: 59px;
+  margin: 30px auto 0;
+  background: #e4e4e4;
+  border-radius: 20px;
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.button {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0 28px;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #000000;
-  font-weight: 700;
-  transition: 0.3s;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);
 }
 
-.button:hover {
-  transform: translateY(-2px);
-  background: #eaeaea;
-}
-
-.button--ghost {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid #333;
-}
-
-.button--ghost:hover {
-  background: #ffffff;
+/* === ЛОГО (текст слева) === */
+.header__logo {
+  position: absolute;
+  left: 40px;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
   color: #000;
 }
 
-.sketches {
-  min-height: 100vh;
-  padding: 120px 20px;
-  background: #111111;
+/* === МЕНЮ === */
+.header__nav {
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+}
+
+/* === КАРТОЧКА С КАРТИНКОЙ === */
+.hero-card {
+  width: 1218px;
+  height: 289px;
+  margin: 70px auto 0;
+}
+
+.hero-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+.hero-card__image {
+  width: 100%;
+  height: calc(100% + 20px);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: translateY(-10px);
+}
+
+/* === ТЕКСТ НА КАРТИНКЕ === */
+.hero-card__title {
+  position: absolute;
+
+  left: 73px;
+  top: 127px;
+
+  width: 511px;
+  height: 47px;
+
   display: flex;
   align-items: center;
-}
+  justify-content: center;
 
-.sketches__container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.section-tag {
-  margin-bottom: 16px;
-  font-size: 14px;
-  letter-spacing: 0.2em;
+  font-family: "Actay", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0;
   text-transform: uppercase;
-  color: #8f8f8f;
+
+  color: #000;
+
+  z-index: 2;
 }
 
-.section-title {
-  font-size: 56px;
-  line-height: 1.05;
-  margin-bottom: 24px;
+/* === НИЖНИЙ ЛОГО === */
+.logo-section {
+  width: 1218px;
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
 }
 
-.section-text {
-  max-width: 700px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #cfcfcf;
+.logo-section__image {
+  width: 1218px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-@media (max-width: 768px) {
-  .hero__title,
-  .section-title {
-    font-size: 40px;
-  }
+.hero-card__star {
+  position: absolute;
+  left: 13px;
+  top: 26px;
 
-  .hero__text,
-  .section-text {
-    font-size: 16px;
-  }
+  width: 265px;
+  height: 250px;
 
-  .hero,
-  .sketches {
-    padding: 80px 20px;
-  }
+  background: red;
+
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+
+  z-index: 1;
 }
