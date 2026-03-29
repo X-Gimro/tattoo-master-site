@@ -1,50 +1,25 @@
-const app = document.querySelector('#app');
+const app = document.querySelector("#app");
 
 app.innerHTML = `
   <div class="page">
-
     <header class="header">
       <div class="header__logo">loraxultrasound.tatt</div>
 
       <nav class="header__nav">
-        <a href="#home" class="header__link">главная</a>
-        <a href="#works" class="header__link">работы</a>
-        <a href="#sketches" class="header__link">эскизы</a>
-        <a href="#contacts" class="header__link">контакты</a>
+        <a href="./index.html" class="header__link">главная</a>
+        <a href="./works.html" class="header__link">работы</a>
+        <a href="./works.html" class="header__link">эскизы</a>
+        <a href="./works.html" class="header__link">контакты</a>
       </nav>
     </header>
 
     <main class="layout">
-      <section class="hero-card" id="home">
-        <div class="hero-card__image-wrap">
-          <img 
-            class="hero-card__image" 
-            src="./one.png" 
-            alt="Тату работа"
-          />
-
-          <div class="hero-card__star"></div>
-
-          <h1 class="hero-card__title">
-            модельные прайсы
-          </h1>
-        </div>
-      </section>
-
-      <section class="logo-section">
-        <img 
-          class="logo-section__image" 
-          src="./logo.png" 
-          alt="Logo"
-        />
-      </section>
-
-      <section class="works-page" id="works">
+      <section class="works-page">
         <div class="works-page__top">
           <p class="works-page__label">portfolio</p>
-          <h2 class="works-page__title">работы</h2>
+          <h1 class="works-page__title">работы</h1>
           <p class="works-page__subtitle">
-            мои работы и эскизы в авторском стиле
+            подборка татуировок и эскизов в авторском стиле
           </p>
         </div>
 
@@ -75,6 +50,5 @@ app.innerHTML = `
         </div>
       </section>
     </main>
-
   </div>
 `;
