@@ -193,8 +193,8 @@ html {
 
 /* === БОЛЬШАЯ КАРТИНКА === */
 .works-big img {
-  width: 390px;
-  height: 476px;
+  width: 390px;   /* было 390 */
+  height: 440px;  /* было 476 */
 
   object-fit: cover;
   border-radius: 20px;
@@ -235,14 +235,14 @@ html {
 
 .works-small-text h3 {
   font-family: "Actay", sans-serif;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .works-small-text p {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.2;
 }
 
@@ -583,8 +583,8 @@ body {
   }
 
   body {
-    padding-bottom: 40px;
-  }
+  overflow-x: hidden;
+}
 }
 
 /* =========================
@@ -620,7 +620,11 @@ body {
    ========================= */
 
 .layout,
-.header,
+.header {
+  position: relative;
+  z-index: 10;
+}
+
 .hero-card,
 .logo-section,
 .works-content,
@@ -684,4 +688,136 @@ body {
   .works-small-list {
     width: 100%;
   }
+}
+
+.social-hero {
+  width: 100%;
+  margin: 40px 0 0;
+  position: relative;
+}
+
+/* САМА КАРТИНКА */
+.social-hero__image {
+  width: 100%;    /* меняешь сама */
+  height: 580px;    /* меняешь сама */
+
+  object-fit: contain; /* не обрезает */
+  display: block;
+}
+
+/* ТЕКСТ ПОВЕРХ */
+.social-hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.social-hero__content h2 {
+  font-size: 32px;
+}
+.social-hero {
+  position: relative;
+}
+.hero-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.details-hero {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 1400px;
+  margin-top: 40px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.details-star {
+  position: absolute;
+  top: var(--star-top);
+  left: var(--star-left);
+  width: var(--star-width);
+  height: var(--star-height);
+  background: #ff0004;
+  filter: blur(var(--star-blur));
+  z-index: 2;
+  pointer-events: none;
+
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.details-hero__content {
+  position: absolute;
+  top: 120px; /* меняй сама */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  color: #111;
+}
+
+.details-hero__content h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.details-hero__content p {
+  font-size: 18px;
+}
+
+.details-star--1 {
+  --star-top: 40px;
+  --star-left: -40px;
+  --star-width: 220px;
+  --star-height: 220px;
+  --star-blur: 10px;
+}
+
+.details-star--2 {
+  --star-top: 40px;
+  --star-left: 1120px;
+  --star-width: 220px;
+  --star-height: 220px;
+  --star-blur: 10px;
+}
+
+.details-star--3 {
+  --star-top: 330px;
+  --star-left: 500px;
+  --star-width: 320px;
+  --star-height: 320px;
+  --star-blur: 12px;
+}
+
+.details-star--4 {
+  --star-top: 860px;
+  --star-left: -30px;
+  --star-width: 260px;
+  --star-height: 260px;
+  --star-blur: 10px;
+}
+
+.details-star--5 {
+  --star-top: 1020px;
+  --star-left: 1080px;
+  --star-width: 220px;
+  --star-height: 220px;
+  --star-blur: 10px;
 }

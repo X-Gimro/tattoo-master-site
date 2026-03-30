@@ -6,30 +6,32 @@ app.innerHTML = `
     <header class="header">
       <div class="header__logo">loraxultrasound.tatt</div>
 
-      <nav class="header__nav">
-        <a href="#home" class="header__link">главная</a>
-        <a href="#works" class="header__link">работы</a>
-        <a href="#sketches" class="header__link">эскизы</a>
-        <a href="#contacts" class="header__link">контакты</a>
-      </nav>
+     <nav class="header__nav">
+  <a href="#home" class="header__link">главная</a>
+  <a href="#works" class="header__link">работы</a>
+  <a href="#sketches" class="header__link">эскизы</a>
+  <a href="social.html" class="header__link">соцсети</a>
+</nav>
     </header>
 
     <main class="layout">
-      <section class="hero-card" id="home">
-        <div class="hero-card__image-wrap">
-          <img 
-            class="hero-card__image" 
-            src="./one.png" 
-            alt="Тату работа"
-          />
+    <section class="hero-card" id="home">
+  <a href="details.html" class="hero-card__link">
+    <div class="hero-card__image-wrap">
+      <img 
+        src="./one.png" 
+        alt="Тату работа" 
+        class="hero-card__image"
+      />
 
-          <div class="hero-card__star"></div>
+      <div class="hero-card__star"></div>
 
-          <h1 class="hero-card__title">
-            модельные прайсы
-          </h1>
-        </div>
-      </section>
+      <h1 class="hero-card__title">
+        модельные прайсы
+      </h1>
+    </div>
+  </a>
+</section>
 
       <section class="logo-section">
         <img 
