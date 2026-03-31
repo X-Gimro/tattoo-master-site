@@ -8,22 +8,22 @@
 body {
   background: #ffffff;
   font-family: "Inter", sans-serif;
+  padding-bottom: 100px;
+  overflow-x: hidden;
 }
 
-/* === ОБЩАЯ СТРАНИЦА === */
+html {
+  scroll-behavior: smooth;
+}
+
 .page {
   width: 100%;
-}
-
-/* === ОСНОВНОЙ КОНТЕЙНЕР === */
-.layout {
-  width: 1218px;
-  margin: 0 auto;
 }
 
 /* === ШАПКА === */
 .header {
   position: relative;
+  z-index: 20;
   width: 1218px;
   height: 59px;
   margin: 30px auto 0;
@@ -34,17 +34,12 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);
 }
 
-/* === ЛОГО (текст слева) === */
 .header__logo {
   position: absolute;
   left: 40px;
   font-size: 26px;
-  font-weight: 400;
-  line-height: 1;
-  color: #000;
 }
 
-/* === МЕНЮ === */
 .header__nav {
   display: flex;
   gap: 30px;
@@ -52,13 +47,13 @@ body {
   margin-right: 40px;
 }
 
-.header__nav a {
+.header__link {
   text-decoration: none;
   color: #000;
   font-size: 24px;
 }
 
-/* === КАРТОЧКА С КАРТИНКОЙ === */
+/* === HERO === */
 .hero-card {
   width: 1218px;
   height: 289px;
@@ -71,7 +66,6 @@ body {
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  background: transparent;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
 }
 
@@ -79,38 +73,34 @@ body {
   width: 100%;
   height: calc(100% + 20px);
   object-fit: cover;
-  object-position: center top;
-  display: block;
   transform: translateY(-10px);
 }
 
-/* === ТЕКСТ НА КАРТИНКЕ === */
 .hero-card__title {
   position: absolute;
-
   left: 73px;
   top: 127px;
-
-  width: 511px;
-  height: 47px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Actay", sans-serif;
   font-size: 36px;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: 0;
   text-transform: uppercase;
-
-  color: #000;
-
   z-index: 2;
 }
 
-/* === НИЖНИЙ ЛОГО === */
+.hero-card__star {
+  position: absolute;
+  left: 13px;
+  top: 26px;
+  width: 265px;
+  height: 250px;
+  background: red;
+  z-index: 1;
+
+  clip-path: polygon(
+    50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,
+    50% 70%,21% 91%,32% 57%,2% 35%,39% 35%
+  );
+}
+
+/* === ЛОГО === */
 .logo-section {
   width: 1218px;
   margin: 60px auto 0;
@@ -119,705 +109,172 @@ body {
 }
 
 .logo-section__image {
-  width: 1218px;
-  max-width: 100%;
-  height: auto;
-  display: block;
+  width: 100%;
 }
 
-.hero-card__star {
-  position: absolute;
-  left: 13px;
-  top: 26px;
-
-  width: 265px;
-  height: 250px;
-
-  background: red;
-
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-
-  z-index: 1;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.header__link {
-  text-decoration: none;
-  color: #000;
-  font-size: 24px;
-}
-
-/* === ШАПКА ПРИМЕРЫ РАБОТ === */
+/* === РАБОТЫ === */
 .works-header {
   width: 1123px;
-  height: 64px; /* было 76 */
   margin: 150px auto 0;
   background: #D9D9D9;
   border-radius: 20px;
-
-  display: flex;
-  align-items: center;
-  padding-left: 28px;
+  padding: 20px;
 }
 
 .works-header__title {
-  font-family: "Actay", sans-serif;
-  font-size: 34px; /* было 42 */
-  font-weight: 400;
-  line-height: 1;
+  font-size: 34px;
   text-transform: uppercase;
-  color: #000;
 }
-/* === КОНТЕНТ ПРИМЕРЫ РАБОТ === */
+
 .works-content {
   width: 1123px;
   margin: 40px auto 0;
   display: flex;
   gap: 50px;
-  align-items: flex-start;
 }
 
-/* === БОЛЬШАЯ КАРТИНКА === */
 .works-big img {
-  width: 390px;   /* было 390 */
-  height: 440px;  /* было 476 */
-
+  width: 390px;
+  height: 440px;
   object-fit: cover;
   border-radius: 20px;
-  display: block;
-
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-/* === СПИСОК СПРАВА === */
+
 .works-small-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* === ОДИН ЭЛЕМЕНТ === */
 .works-small-item {
   display: flex;
-  gap: 28px;
-  align-items: flex-start;
-  gap: 22px; /* было 28 */
+  gap: 22px;
 }
-
 
 .works-small-item img {
-  width: 160px;   /* было 190 */
-  height: 160px;  /* было 190 */
-
-  object-fit: cover;
+  width: 160px;
+  height: 160px;
   border-radius: 20px;
-
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.18);
-}
-
-/* === ТЕКСТ СПРАВА === */
-.works-small-text {
-  padding-top: 6px;
 }
 
 .works-small-text h3 {
-  font-family: "Actay", sans-serif;
   font-size: 24px;
-  font-weight: 400;
-  line-height: 1;
   margin-bottom: 8px;
 }
 
 .works-small-text p {
   font-size: 18px;
-  line-height: 1.2;
 }
 
+/* ===== DETAILS PAGE ===== */
+html,
 body {
-  padding-bottom: 100px;
+  min-height: 100%;
+  margin: 0;
 }
 
-#works {
-  scroll-margin-top: 40px;
-}
-
-.works-big-text {
-  margin-top: 16px;
-}
-
-.works-big-text h2 {
-  font-family: "Actay", sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.works-big-text p {
-  font-size: 20px;
-  line-height: 1.3;
-  max-width: 390px;
-}
-
-/* =========================
-   АДАПТИВ ПОД ПЛАНШЕТЫ
-   ========================= */
-@media (max-width: 1279px) {
-  .layout {
-    width: calc(100% - 40px);
-  }
-
-  .header {
-    width: calc(100% - 40px);
-  }
-
-  .hero-card {
-    width: 100%;
-    height: 250px;
-  }
-
-  .logo-section {
-    width: 100%;
-  }
-
-  .logo-section__image {
-    width: 100%;
-  }
-
-  .works-header {
-    width: 100%;
-    margin: 120px auto 0;
-  }
-
-  .works-content {
-    width: 100%;
-    gap: 32px;
-  }
-
-  .works-big img {
-    width: 320px;
-    height: 390px;
-  }
-
-  .works-big-text h2 {
-    font-size: 28px;
-  }
-
-  .works-big-text p {
-    font-size: 18px;
-    max-width: 320px;
-  }
-
-  .works-small-item img {
-    width: 130px;
-    height: 130px;
-  }
-
-  .works-small-text h3 {
-    font-size: 26px;
-  }
-
-  .works-small-text p {
-    font-size: 18px;
-  }
-}
-
-/* =========================
-   АДАПТИВ ПОД ПЛАНШЕТЫ / МАЛЕНЬКИЕ НОУТЫ
-   ========================= */
-@media (max-width: 1024px) {
-  .header {
-    height: auto;
-    min-height: 59px;
-    padding: 16px 24px;
-    align-items: center;
-  }
-
-  .header__logo {
-    position: static;
-    font-size: 22px;
-  }
-
-  .header__nav {
-    gap: 18px;
-    margin-right: 0;
-  }
-
-  .header__nav a,
-  .header__link {
-    font-size: 20px;
-  }
-
-  .hero-card {
-    height: 220px;
-    margin-top: 50px;
-  }
-
-  .hero-card__title {
-    left: 40px;
-    top: 98px;
-    width: 360px;
-    height: auto;
-    font-size: 28px;
-  }
-
-  .hero-card__star {
-    left: 8px;
-    top: 18px;
-    width: 210px;
-    height: 200px;
-  }
-
-  .works-header {
-    height: 58px;
-    margin-top: 120px;
-    padding-left: 22px;
-  }
-
-  .works-header__title {
-    font-size: 28px;
-  }
-
-  .works-content {
-    gap: 24px;
-  }
-
-  .works-big img {
-    width: 280px;
-    height: 360px;
-  }
-
-  .works-big-text h2 {
-    font-size: 24px;
-  }
-
-  .works-big-text p {
-    font-size: 16px;
-    max-width: 280px;
-  }
-
-  .works-small-item {
-    gap: 16px;
-  }
-
-  .works-small-item img {
-    width: 110px;
-    height: 110px;
-  }
-
-  .works-small-text h3 {
-    font-size: 22px;
-    margin-bottom: 6px;
-  }
-
-  .works-small-text p {
-    font-size: 16px;
-  }
-}
-
-/* =========================
-   АДАПТИВ ПОД ТЕЛЕФОНЫ
-   ========================= */
-@media (max-width: 767px) {
-  .layout {
-    width: calc(100% - 24px);
-  }
-
-  .header {
-    width: calc(100% - 24px);
-    margin-top: 16px;
-    padding: 14px 16px;
-    border-radius: 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .header__logo {
-    position: static;
-    font-size: 18px;
-  }
-
-  .header__nav {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 16px;
-  }
-
-  .header__nav a,
-  .header__link {
-    font-size: 16px;
-  }
-
-  .hero-card {
-    width: 100%;
-    height: 170px;
-    margin-top: 28px;
-  }
-
-  .hero-card__image-wrap {
-    border-radius: 16px;
-  }
-
-  .hero-card__image {
-    height: 100%;
-    transform: none;
-  }
-
-  .hero-card__star {
-    left: 8px;
-    top: 10px;
-    width: 120px;
-    height: 115px;
-  }
-
-  .hero-card__title {
-    left: 18px;
-    top: 72px;
-    width: 200px;
-    height: auto;
-    justify-content: flex-start;
-    font-size: 16px;
-    line-height: 1;
-  }
-
-  .logo-section {
-    width: 100%;
-    margin-top: 32px;
-  }
-
-  .logo-section__image {
-    width: 100%;
-  }
-
-  .works-header {
-    width: 100%;
-    height: 50px;
-    margin-top: 80px;
-    border-radius: 16px;
-    padding-left: 16px;
-  }
-
-  .works-header__title {
-    font-size: 22px;
-  }
-
-  .works-content {
-    width: 100%;
-    margin-top: 24px;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .works-big {
-    width: 100%;
-  }
-
-  .works-big img {
-    width: 100%;
-    height: 360px;
-  }
-
-  .works-big-text {
-    margin-top: 14px;
-  }
-
-  .works-big-text h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-
-  .works-big-text p {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .works-small-list {
-    width: 100%;
-    gap: 18px;
-  }
-
-  .works-small-item {
-    gap: 14px;
-    align-items: center;
-  }
-
-  .works-small-item img {
-    width: 96px;
-    height: 96px;
-    flex-shrink: 0;
-  }
-
-  .works-small-text {
-    padding-top: 0;
-  }
-
-  .works-small-text h3 {
-    font-size: 18px;
-    margin-bottom: 4px;
-  }
-
-  .works-small-text p {
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  #works {
-    scroll-margin-top: 24px;
-  }
-
-  body {
+.details-page {
+  position: relative;
+  min-height: 2200px;
+  background: #f2f2f2;
   overflow-x: hidden;
-}
-}
-
-/* =========================
-   ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ
-   ========================= */
-@media (max-width: 390px) {
-  .hero-card {
-    height: 155px;
-  }
-
-  .hero-card__star {
-    width: 105px;
-    height: 100px;
-  }
-
-  .hero-card__title {
-    top: 64px;
-    width: 170px;
-    font-size: 14px;
-  }
-
-  .works-big img {
-    height: 320px;
-  }
-
-  .works-header__title {
-    font-size: 20px;
-  }
-}
-
-/* =========================
-   ГИБКИЙ ДЕСКТОП (важно)
-   ========================= */
-
-.layout,
-.header {
-  position: relative;
-  z-index: 10;
-}
-
-.hero-card,
-.logo-section,
-.works-content,
-.works-header {
-  max-width: 1218px;
-  width: calc(100% - 40px);
-}
-
-/* =========================
-   КОГДА ЭКРАН СУЖАЕТСЯ
-   ========================= */
-@media (max-width: 1218px) {
-  .hero-card {
-    height: 240px;
-  }
-
-  .hero-card__title {
-    font-size: 30px;
-    left: 40px;
-    top: 110px;
-  }
-
-  .hero-card__star {
-    width: 220px;
-    height: 210px;
-  }
-
-  .works-content {
-    gap: 32px;
-  }
-
-  .works-big img {
-    width: 320px;
-    height: 400px;
-  }
-
-  .works-big-text p {
-    max-width: 320px;
-  }
-}
-
-/* =========================
-   ЕЩЁ УЖЕ (почти планшет)
-   ========================= */
-@media (max-width: 1000px) {
-  .works-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .works-big img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-
-  .works-big-text p {
-    max-width: 100%;
-  }
-
-  .works-small-list {
-    width: 100%;
-  }
-}
-
-.social-hero {
-  width: 100%;
-  margin: 40px 0 0;
-  position: relative;
-}
-
-/* САМА КАРТИНКА */
-.social-hero__image {
-  width: 100%;    /* меняешь сама */
-  height: 580px;    /* меняешь сама */
-
-  object-fit: contain; /* не обрезает */
-  display: block;
-}
-
-/* ТЕКСТ ПОВЕРХ */
-.social-hero__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.social-hero__content h2 {
-  font-size: 32px;
-}
-.social-hero {
-  position: relative;
-}
-.hero-card__link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
 }
 
 .details-hero {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  min-height: 1400px;
-  margin-top: 40px;
-  background: #ffffff;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  min-height: 2200px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
 }
 
+/* ШАПКА — ТОЛЬКО СЛОЙ, без изменения твоих шрифтов/размеров */
+.header {
+  position: relative;
+  z-index: 20;
+}
+
+/* ЗВЕЗДЫ */
 .details-star {
   position: absolute;
-  top: var(--star-top);
-  left: var(--star-left);
-  width: var(--star-width);
-  height: var(--star-height);
-  background: #ff0004;
-  filter: blur(var(--star-blur));
   z-index: 2;
   pointer-events: none;
-
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+  overflow: visible;
 }
 
-.details-hero__content {
-  position: absolute;
-  top: 120px; /* меняй сама */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  text-align: center;
-  color: #111;
+.details-star-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.details-hero__content h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.details-hero__content p {
-  font-size: 18px;
-}
-
+/* ТВОИ ПАРАМЕТРЫ — НЕ МЕНЯЮ */
 .details-star--1 {
-  --star-top: 40px;
-  --star-left: -40px;
-  --star-width: 220px;
-  --star-height: 220px;
-  --star-blur: 10px;
+  top: -200px;
+  left: -180px;
+  width: 640px;
+  height: 640px;
+  transform: rotate(40deg);
 }
 
 .details-star--2 {
-  --star-top: 40px;
-  --star-left: 1120px;
-  --star-width: 220px;
-  --star-height: 220px;
-  --star-blur: 10px;
+  top: -290px;
+  right: -130px;
+  width: 473px;
+  height: 473px;
+  transform: rotate(85deg);
 }
 
+/* 3 ЗВЕЗДУ ВОЗВРАЩАЕМ КАК БЫЛО У ТЕБЯ */
 .details-star--3 {
-  --star-top: 330px;
-  --star-left: 500px;
-  --star-width: 320px;
-  --star-height: 320px;
-  --star-blur: 12px;
+  top: 300px;
+  left: 50%;
+  width: 693px;
+  height: 693px;
+  transform: rotate(45deg);
 }
 
+/* НИЖНИЕ ЗВЕЗДЫ ПОДНИМАЕМ ВЫШЕ */
 .details-star--4 {
-  --star-top: 860px;
-  --star-left: -30px;
-  --star-width: 260px;
-  --star-height: 260px;
-  --star-blur: 10px;
+  bottom: 400px;
+  left: -140px;
+  width: 843px;
+  height: 843px;
+  transform: rotate(10deg);
 }
 
 .details-star--5 {
-  --star-top: 1020px;
-  --star-left: 1080px;
-  --star-width: 220px;
-  --star-height: 220px;
-  --star-blur: 10px;
+  bottom: 200px;
+  right: -110px;
+  width: 509px;
+  height: 509px;
+  transform: rotate(35deg);
+}
+
+/* КОНТЕНТ */
+.details-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  padding-top: 260px;
+}
+
+.details-card {
+  width: 700px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.details-image {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+}
+.details-star-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
 }
