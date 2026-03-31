@@ -178,7 +178,11 @@ body {
 }
 
 .details-page {
+  --details-page-height: 1780px;
+  --details-hero-shift: 30px;
+
   position: relative;
+  min-height: var(--details-page-height);
   background: #f2f2f2;
   overflow-x: hidden;
 }
@@ -186,11 +190,12 @@ body {
 .details-hero {
   position: absolute;
   inset: 0;
+  top: calc(-1 * var(--details-hero-shift));
+  height: calc(var(--details-page-height) + var(--details-hero-shift));
   z-index: 1;
   pointer-events: none;
-  overflow: visible;
+  overflow: hidden;
 }
-
 
 /* ЗВЕЗДЫ */
 .details-star {
@@ -234,7 +239,7 @@ body {
 
 /* НИЖНИЕ ЗВЕЗДЫ ПОДНИМАЕМ ВЫШЕ */
 .details-star--4 {
-  bottom: 400px;
+  bottom: 0px;
   left: -140px;
   width: 843px;
   height: 843px;
@@ -242,7 +247,8 @@ body {
 }
 
 .details-star--5 {
-  bottom: 200px;
+  position: absolute;
+  bottom: -150px; /* 👈 регулируешь */
   right: -110px;
   width: 509px;
   height: 509px;
@@ -282,7 +288,8 @@ body {
   width: 1400px;
   max-width: 100%;
   margin: 80px auto 0;
-  min-height: 1600px;
+  height: 1400px;
+  min-height: 0;
   z-index: 3;
 }
 
@@ -529,11 +536,11 @@ body {
 }
 
 .details-item--3 {
-  top: 850px;
+  top: 1000px;
   left: 120px;
 }
 
 .details-item--4 {
-  top: 850px;
+  top: 1000px;
   right: 120px;
 }
