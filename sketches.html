@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Эскизы</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="adaptive.css">
-  </head>
-  <body>
-    <div class="page">
-      <h1 class="title">Эскизы</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Эскизы — loraxultrasound.tatt</title>
 
-      <a href="./index.html" class="button button--ghost" style="margin-top: 20px;">
-        Назад
-      </a>
-    </div>
-  </body>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./adaptive.css" />
+</head>
+<body class="sketches-page">
+
+  <div class="page">
+    <header class="header">
+      <div class="header__logo">loraxultrasound.tatt</div>
+
+      <nav class="header__nav">
+        <a href="index.html" class="header__link">главная</a>
+        <a href="details.html" class="header__link">работы</a>
+        <a href="sketches.html" class="header__link active">эскизы</a>
+        <a href="social.html" class="header__link">соцсети</a>
+      </nav>
+    </header>
+
+    <section class="sketches-layout">
+
+      <!-- 1 -->
+      <article class="sketches-card sketches-card--1">
+        <div class="sketches-card__image-wrap">
+          <img src="./one.png" alt="TS-077L Ugly Doll Arm V1" class="sketches-card__image">
+        </div>
+        <div class="sketches-card__text">
+          <h2>TS-077L Ugly Doll Arm V1</h2>
+          <p>[12 000p.]</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="sketches-card sketches-card--2">
+        <div class="sketches-card__image-wrap">
+          <img src="./work-small-1.JPG" alt="TS-079M POP Skulls" class="sketches-card__image">
+        </div>
+        <div class="sketches-card__text">
+          <h2>TS-079M POP Skulls</h2>
+          <p>[10 000p.]</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="sketches-card sketches-card--3">
+        <div class="sketches-card__image-wrap">
+          <img src="./work-big.JPG" alt="TS-078M Heart Brake Colour" class="sketches-card__image">
+        </div>
+        <div class="sketches-card__text sketches-card__text--bottom">
+          <h2>TS-078M Heart Brake Colour</h2>
+          <p>[10 000p.]</p>
+        </div>
+      </article>
+
+      <!-- ТЕКСТОВЫЙ БЛОК СПРАВА -->
+      <div class="sketches-side-list">
+        <div class="sketches-side-item">
+          <h3>TS-055M Tribal</h3>
+          <p>[7000p.]</p>
+        </div>
+
+        <div class="sketches-side-item">
+          <h3>TS-056L Anime</h3>
+          <p>[15 000p.]</p>
+        </div>
+
+        <div class="sketches-side-item">
+          <h3>TS-057M XXX’s</h3>
+          <p>[7000p.]</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <article class="sketches-card sketches-card--4">
+        <div class="sketches-card__image-wrap sketches-card__image-wrap--small-vertical">
+          <img src="./work-small-2.JPG" alt="Heart sketch" class="sketches-card__image">
+        </div>
+      </article>
+
+    </section>
+  </div>
+
+</body>
 </html>

@@ -10,7 +10,7 @@ app.innerHTML = `
       <nav class="header__nav">
         <a href="#home" class="header__link">главная</a>
         <a href="#works" class="header__link">работы</a>
-        <a href="#sketches" class="header__link">эскизы</a>
+        <a href="sketches.html" class="header__link">эскизы</a>
         <a href="social.html" class="header__link">соцсети</a>
       </nav>
     </header>
@@ -48,7 +48,7 @@ app.innerHTML = `
 
         <!-- БОЛЬШАЯ -->
         <div class="works-big">
-            <img src="./work-big.png" alt="">
+           <img src="./work-big.JPG" alt="">
 
           <div class="works-big-text">
             <h2>Название работы</h2>
@@ -60,7 +60,7 @@ app.innerHTML = `
         <div class="works-small-list">
 
           <div class="works-small-item">
-            <img src="./work-small-1.png" alt="">
+            <img src="./work-small-1.JPG" alt="">
             <div class="works-small-text">
               <h3>Название</h3>
               <p>Описание</p>
@@ -68,7 +68,7 @@ app.innerHTML = `
           </div>
 
           <div class="works-small-item">
-            <img src="./work-small-2.png" alt="">
+            <img src="./work-small-2.JPG" alt="">
             <div class="works-small-text">
               <h3>Название</h3>
               <p>Описание</p>
@@ -76,7 +76,7 @@ app.innerHTML = `
           </div>
 
           <div class="works-small-item">
-            <img src="./work-small-3.png" alt="">
+           <img src="./work-small-3.JPG" alt="">
             <div class="works-small-text">
               <h3>Название</h3>
               <p>Описание</p>
