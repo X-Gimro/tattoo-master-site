@@ -545,33 +545,33 @@ body {
   right: 120px;
 }
 
-/* ===== SOCIAL HERO (БЕЗ ОБРЕЗКИ) ===== */
+/* ===== SOCIAL HERO CONTROL ===== */
 
 .social-hero {
+  display: flex;
+  justify-content: center; /* центр по горизонтали */
+  
+  margin-top: 40px;      /* ← отступ сверху (регулируешь) */
+  margin-bottom: 80px;   /* ← отступ снизу (регулируешь) */
+  padding-left: 20px;    /* ← отступ слева */
+  padding-right: 20px;   /* ← отступ справа */
+
   position: relative;
-  width: 100%;
-  max-width: 700px; /* регулируешь размер */
-  margin: 40px auto 0;
 }
 
-
-/* КАРТИНКА — НЕ ОБРЕЗАЕТСЯ */
+/* КАРТИНКА */
 .social-hero__image {
-  width: 100%;
-  height: auto;
+  width: 870px;   /* ← ШИРИНА (меняешь) */
+  height: auto;   /* ← НЕ ОБРЕЗАЕТ */
   display: block;
 }
 
-/* ТЕКСТ ПО ЦЕНТРУ КАРТИНКИ */
+/* ТЕКСТ ПОВЕРХ */
 .social-hero__content {
   position: absolute;
-  inset: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* идеальный центр */
 
   text-align: center;
 }
