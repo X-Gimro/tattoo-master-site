@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>tattoo mobile</title>
+
+  <link rel="stylesheet" href="mobile-style.css">
+</head>
+
+<body>
+
+<script>
+  // если открыли на ПК → перекидываем обратно
+  if (window.innerWidth > 768) {
+    window.location.replace('index.html');
+  }
+</script>
+
+<div class="m-page">
+
+  <!-- ШАПКА -->
+  <header class="m-header">
+    <div class="m-header__logo">loraxultrasound.tatt</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="m-hero">
+    <h1 class="m-hero__title">Tattoo artist</h1>
+  </section>
+
+  <!-- РАБОТЫ -->
+  <section class="m-works">
+    <h2 class="m-title">Работы</h2>
+
+    <div class="m-works__list">
+      <!-- сюда потом вставим карточки -->
+    </div>
+  </section>
+
+  <!-- КНОПКИ -->
+  <nav class="m-nav">
+    <a href="mobile-index.html">главная</a>
+    <a href="mobile-details.html">работы</a>
+    <a href="mobile-sketches.html">эскизы</a>
+    <a href="mobile-social.html">соцсети</a>
+  </nav>
+
+</div>
+
+</body>
+</html>

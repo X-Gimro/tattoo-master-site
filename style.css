@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Actay';
+  src: url('./Actay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* === БАЗА === */
 * {
   margin: 0;
@@ -7,7 +14,7 @@
 
 body {
   background: #ffffff;
-  font-family: "Inter", sans-serif;
+  font-family: 'Actay', sans-serif;
   padding-bottom: 100px;
   overflow-x: hidden;
 }
@@ -55,53 +62,16 @@ html {
   text-decoration: none;
   color: #000;
   font-size: 24px;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
 }
 
-/* === HERO === */
-.hero-card {
-  width: 1218px;
-  height: 289px;
-  margin: 70px auto 0;
+.header__link:hover {
+  opacity: 1;
 }
 
-.hero-card__image-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
-}
-
-.hero-card__image {
-  width: 100%;
-  height: calc(100% + 20px);
-  object-fit: cover;
-  transform: translateY(-10px);
-}
-
-.hero-card__title {
-  position: absolute;
-  left: 73px;
-  top: 127px;
-  font-size: 36px;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-.hero-card__star {
-  position: absolute;
-  left: 13px;
-  top: 26px;
-  width: 265px;
-  height: 250px;
-  background: red;
-  z-index: 1;
-
-  clip-path: polygon(
-    50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,
-    50% 70%,21% 91%,32% 57%,2% 35%,39% 35%
-  );
+.header__link.active {
+  opacity: 1;
 }
 
 /* === ЛОГО === */
@@ -122,28 +92,76 @@ html {
   margin: 150px auto 0;
   background: #D9D9D9;
   border-radius: 20px;
-  padding: 20px;
+  padding: 22px 28px 18px;
 }
 
 .works-header__title {
-  font-size: 34px;
-  text-transform: uppercase;
+  font-size: 37px;
+  text-transform: none;
+  color: #5E5E5E;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.4px;
 }
 
 .works-content {
+  position: relative;
   width: 1123px;
   margin: 40px auto 0;
   display: flex;
   gap: 50px;
+  align-items: flex-start;
+  z-index: 1;
 }
 
+.works-content::before {
+  content: "";
+  position: absolute;
+
+  width: 960px;      /* размер картинки */
+  height: 660px;     /* размер картинки */
+  
+  left: 150px;       /* влево/вправо */
+  top: -30px;        /* вверх/вниз */
+
+  background: url('./linogravyura.PNG') no-repeat center;
+  background-size: contain;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* БОЛЬШАЯ КАРТОЧКА */
 .works-big img {
   width: 390px;
   height: 440px;
   object-fit: cover;
   border-radius: 20px;
+  display: block;
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
 }
 
+.works-big-text {
+  margin-top: 18px;
+}
+
+.works-big-text h2 {
+  font-size: 29px;
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  margin-bottom: 8px;
+}
+
+.works-big-text p {
+  font-size: 17px;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+/* СПИСОК СПРАВА */
 .works-small-list {
   display: flex;
   flex-direction: column;
@@ -152,31 +170,40 @@ html {
 
 .works-small-item {
   display: flex;
+  align-items: flex-start;
   gap: 22px;
+}
+
+.works-small-text {
+  padding-top: 6px;
 }
 
 .works-small-item img {
   width: 160px;
   height: 160px;
   border-radius: 20px;
+  object-fit: cover;
+  display: block;
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 }
 
 .works-small-text h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 28px;
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  margin-bottom: 6px;
 }
 
 .works-small-text p {
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.2px;
 }
 
 /* ===== DETAILS PAGE ===== */
-html,
-body {
-  min-height: 100%;
-  margin: 0;
-}
-
 .details-page {
   --details-page-height: 1780px;
   --details-hero-shift: 30px;
@@ -202,57 +229,12 @@ body {
   position: absolute;
   z-index: 2;
   pointer-events: none;
-  overflow: visible;
 }
 
 .details-star-svg {
   width: 100%;
   height: 100%;
   display: block;
-}
-
-/* ТВОИ ПАРАМЕТРЫ — НЕ МЕНЯЮ */
-.details-star--1 {
-  top: -200px;
-  left: -180px;
-  width: 640px;
-  height: 640px;
-  transform: rotate(40deg);
-}
-
-.details-star--2 {
-  top: -290px;
-  right: -130px;
-  width: 473px;
-  height: 473px;
-  transform: rotate(85deg);
-}
-
-/* 3 ЗВЕЗДУ ВОЗВРАЩАЕМ КАК БЫЛО У ТЕБЯ */
-.details-star--3 {
-  top: 300px;
-  left: 50%;
-  width: 693px;
-  height: 693px;
-  transform: rotate(45deg);
-}
-
-/* НИЖНИЕ ЗВЕЗДЫ ПОДНИМАЕМ ВЫШЕ */
-.details-star--4 {
-  bottom: 0px;
-  left: -140px;
-  width: 843px;
-  height: 843px;
-  transform: rotate(10deg);
-}
-
-.details-star--5 {
-  position: absolute;
-  bottom: -150px; /* 👈 регулируешь */
-  right: -110px;
-  width: 509px;
-  height: 509px;
-  transform: rotate(35deg);
 }
 
 /* КОНТЕНТ */
@@ -275,379 +257,36 @@ body {
   display: block;
   border-radius: 24px;
 }
-.details-star-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
-}
 
-/* ===== ГАЛЕРЕЯ ===== */
-.details-photos {
-  position: relative;
-  width: 1400px;
-  max-width: 100%;
-  margin: 80px auto 0;
-  height: 1400px;
-  min-height: 0;
-  z-index: 3;
-}
-
-/* ОБЩИЙ БЛОК: фото + текст */
-.details-item {
-  position: absolute;
-  width: 541px;
-}
-
-/* КАРТИНКА */
-.details-photo {
-  width: 100%;
-  border-radius: 24px;
-  display: block;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-}
-
-.details-item {
-  position: absolute;
-  width: 541px;
-}
-
-.details-photo {
-  width: 100%;
-  border-radius: 24px;
-  display: block;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* ПЕРВАЯ КАРТОЧКА */
-.details-item--1 {
-  top: 0;
-  left: 120px;
-}
-
-.details-meta--1 {
-  position: relative;
-  margin-top: 22px;
-  height: 110px; /* место под свободную расстановку */
-}
-
-.details-title--1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 26px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-price--1 {
-  position: absolute;
-  left: 0;
-  top: 48px;
-  font-size: 24px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-side--1 {
-  position: absolute;
-  left: 420px;   /* двигай правый текст */
-  top: 48px;     /* ставим на уровень нижней строки */
-  font-size: 22px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
-}
-
-.details-side-price--1 {
-  position: absolute;
-  left: 360px;   /* цена под правым текстом */
-  top: 88px;
-  font-size: 22px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
-}
-
-.old-price {
-  text-decoration: line-through;
-  margin-right: 8px;
-}
-
-/* ВТОРАЯ КАРТОЧКА */
-.details-item--2 {
-  top: 0;
-  right: 120px;
-}
-
-.details-meta--2 {
-  position: relative;
-  margin-top: 22px;
-  height: 120px;
-}
-
-.details-title--2 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 26px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-price--2 {
-  position: absolute;
-  left: 0;
-  top: 50px;
-  font-size: 24px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-side--2 {
-  position: absolute;
-  left: 400px;
-  top: 55px;
-  font-size: 24px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
-}
-
-.details-side-price--2 {
-  position: absolute;
-  left: 330px;  /* одинаково с текстом */
-  top: 92px;    /* можно чуть подогнать */
-  font-size: 24px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
-}
-
-/* ТРЕТЬЯ КАРТОЧКА */
-.details-meta--3 {
-  position: relative;
-  margin-top: 22px;
-  height: 120px;
-}
-
-/* ЛЕВАЯ ЧАСТЬ */
-.details-title--3 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 26px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-price--3 {
-  position: absolute;
-  left: 0;
-  top: 50px;
-  font-size: 24px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-/* ПРАВАЯ ЧАСТЬ */
-.details-side--3 {
-  position: absolute;
-  left: 340px;
-  top: 55px;
-  width: 320px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-side-line1,
-.details-side-line2 {
-  display: block;
-  font-size: 24px;
-  line-height: 1.15;
-}
-
-/* двигаешь Ferrari отдельно */
-.details-side-line2 {
-  margin-left: 125px;
-}
-
-.details-side-price--3 {
-  position: absolute;
-  left: 325px; /* ОБЯЗАТЕЛЬНО такой же как выше */
-  top: 120px;
-  font-size: 22px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
-}
-
-/* ЧЕТВЕРТАЯ КАРТОЧКА */
-.details-meta--4 {
-  position: relative;
-  margin-top: 22px;
-  height: 100px;
-}
-
-.details-title--4 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 26px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-price--4 {
-  position: absolute;
-  left: 0;
-  top: 55px;
-  font-size: 24px;
-  margin: 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-/* СТИЛИ ТЕКСТА */
-.details-title {
-  font-size: 24px;
-  margin-bottom: 6px;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.details-price {
-  font-size: 22px;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.old-price {
-  text-decoration: line-through;
-  margin-right: 8px;
-}
-
-/* РАСПОЛОЖЕНИЕ БЛОКОВ */
-.details-item--1 {
-  top: 0;
-  left: 120px;
-}
-
-.details-item--2 {
-  top: 0;
-  right: 120px;
-}
-
-.details-item--3 {
-  top: 1000px;
-  left: 120px;
-}
-
-.details-item--4 {
-  top: 1000px;
-  right: 120px;
-}
-
-/* ===== SOCIAL HERO CONTROL ===== */
-
+/* ===== SOCIAL ===== */
 .social-hero {
   display: flex;
-  justify-content: center; /* центр по горизонтали */
-  
-  margin-top: 40px;      /* ← отступ сверху (регулируешь) */
-  margin-bottom: 80px;   /* ← отступ снизу (регулируешь) */
-  padding-left: 20px;    /* ← отступ слева */
-  padding-right: 20px;   /* ← отступ справа */
-
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  padding: 0 20px;
   position: relative;
 }
 
-/* КАРТИНКА */
 .social-hero__image {
-  width: 870px;   /* ← ШИРИНА (меняешь) */
-  height: auto;   /* ← НЕ ОБРЕЗАЕТ */
+  width: 870px;
+  height: auto;
   display: block;
 }
 
-/* ТЕКСТ ПОВЕРХ */
 .social-hero__content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* идеальный центр */
-
-  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
-/* СТИЛЬ ТЕКСТА */
 .social-hero__content h2 {
   font-size: 22px;
   line-height: 1.4;
-
-  color: #000;
 }
 
-/* ===== SKETCHES PAGE ===== */
-
-.sketches-page {
-  background: #ffffff;
-}
-
-.sketches-hero {
-  width: 1123px;
-  margin: 70px auto 0;
-  background: #d9d9d9;
-  border-radius: 20px;
-  padding: 28px 32px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.sketches-hero__title {
-  font-size: 34px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.sketches-hero__text {
-  font-size: 20px;
-  line-height: 1.35;
-}
-
-.sketches-grid {
-  width: 1123px;
-  margin: 40px auto 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.sketch-card {
-  background: #f4f4f4;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-.sketch-card__image {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-}
-
-.sketch-card__info {
-  padding: 20px 22px 24px;
-}
-
-.sketch-card__info h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.sketch-card__info p {
-  font-size: 18px;
-  line-height: 1.35;
-}
-
-/* ===== SKETCHES PAGE ===== */
-
+/* ===== SKETCHES ===== */
 .sketches-page {
   background: #f2f2f2;
 }
@@ -655,21 +294,14 @@ body {
 .sketches-layout {
   position: relative;
   width: 1280px;
-  height: 900px; /* можно потом подогнать */
+  height: 900px;
   margin: 0 auto;
 }
 
-.sketches-card__image-wrap {
-  background: #f7f7f7;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
-}
-
 .sketches-card__image {
-   width: 100%;
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* важно */
+  object-fit: cover;
 }
 
 .sketches-card__text {
@@ -679,100 +311,26 @@ body {
 .sketches-card__text h2 {
   font-size: 24px;
   font-weight: 400;
-  line-height: 1.15;
   margin-bottom: 4px;
 }
 
 .sketches-card__text p {
   font-size: 22px;
-  line-height: 1.15;
 }
 
-.sketches-card--1 {
-  position: absolute;
-  top: 181px;
-  left: 62px;
-  width: 530px;
+.works-big img {
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.18),
+    0 24px 40px rgba(0, 0, 0, 0.22) !important;
 }
 
-.sketches-card--1 .sketches-card__image-wrap {
-  width: 530px;
-  height: 455px;
+.works-small-item img {
+  box-shadow:
+    0 8px 14px rgba(0, 0, 0, 0.16),
+    0 18px 30px rgba(0, 0, 0, 0.2) !important;
 }
-
-.sketches-card--2 {
-  position: absolute;
-  top: 186px;
-  left: 683px;
-  width: 530px;
-}
-
-.sketches-card--2 .sketches-card__image-wrap {
-  width: 530px;
-  height: 450px;
-}
-
-.sketches-card--3 {
-  position: absolute;
-  top: 505px;
-  left: -1px;
-  width: 892px;
-}
-
-.sketches-card--3 .sketches-card__image-wrap {
-  width: 892px;
-  height: 499px;
-}
-
-.sketches-card__text--bottom {
-  text-align: right;
-  padding-right: 6px;
-}
-
-.sketches-side-list {
-  grid-column: 3;
-  grid-row: 2;
-  margin-top: 42px;
-  padding-left: 12px;
-}
-
-.sketches-side-item {
-  margin-bottom: 24px;
-}
-
-.sketches-side-item h3 {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.15;
-  margin-bottom: 3px;
-}
-
-.sketches-side-item p {
-  font-size: 21px;
-  line-height: 1.15;
-}
-
-.sketches-card--4 {
-  grid-column: 4;
-  grid-row: 2;
-  align-self: end;
-  margin-left: -10px;
-}
-
-.sketches-card__image-wrap--small-vertical {
-  width: 220px;
-}
-
-.header__link.active {
-  opacity: 1;
-  font-weight: 600;
-}
-
-.header__link {
-  opacity: 0.65;
-  transition: opacity 0.2s ease;
-}
-
-.header__link:hover {
-  opacity: 1;
+.works-big,
+.works-small-list {
+  position: relative;
+  z-index: 2;
 }

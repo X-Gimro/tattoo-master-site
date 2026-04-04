@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.m-page {
+  padding: 16px;
+}
+
+/* ШАПКА */
+.m-header {
+  margin-bottom: 20px;
+}
+
+.m-header__logo {
+  font-size: 18px;
+}
+
+/* HERO */
+.m-hero {
+  margin-bottom: 30px;
+}
+
+.m-hero__title {
+  font-size: 26px;
+}
+
+/* ЗАГОЛОВКИ */
+.m-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* РАБОТЫ */
+.m-works__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* НАВИГАЦИЯ */
+.m-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: #eee;
+  padding: 12px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.m-nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}

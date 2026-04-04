@@ -9,31 +9,13 @@ app.innerHTML = `
 
       <nav class="header__nav">
         <a href="#home" class="header__link">главная</a>
-        <a href="#works" class="header__link">работы</a>
         <a href="sketches.html" class="header__link">эскизы</a>
         <a href="social.html" class="header__link">соцсети</a>
       </nav>
     </header>
 
-    <!-- ГЛАВНЫЙ БЛОК -->
-    <section class="hero-card" id="home">
-   <div class="hero-card__image-wrap">
-
-  <a href="details.html">
-    <img src="./one.png" alt="" class="hero-card__image">
-  </a>
-
-  <div class="hero-card__star"></div>
-
-  <div class="hero-card__title">
-  эскизы для реализации
-  </div>
-
-</div>
-    </section>
-
     <!-- ЛОГО -->
-    <section class="logo-section">
+    <section class="logo-section" id="home">
       <img src="./logo.png" alt="" class="logo-section__image">
     </section>
 
@@ -41,18 +23,18 @@ app.innerHTML = `
     <section id="works">
 
       <div class="works-header">
-        <h2 class="works-header__title">примеры работ</h2>
+        <h2 class="works-header__title">примеры работ*</h2>
       </div>
 
       <div class="works-content">
 
         <!-- БОЛЬШАЯ -->
         <div class="works-big">
-           <img src="./work-big.JPG" alt="">
+          <img src="./work-big.JPG" alt="SPIKEs & CROSSEs">
 
           <div class="works-big-text">
-            <h2>Название работы</h2>
-            <p>Краткое описание работы</p>
+            <h2>SPIKEs & CROSSEs</h2>
+            <p>[home freehand ://]</p>
           </div>
         </div>
 
@@ -60,26 +42,26 @@ app.innerHTML = `
         <div class="works-small-list">
 
           <div class="works-small-item">
-            <img src="./work-small-1.JPG" alt="">
+            <img src="./work-small-1.JPG" alt="STARs BRITHMARK">
             <div class="works-small-text">
-              <h3>Название</h3>
-              <p>Описание</p>
+              <h3>STARs BRITHMARK</h3>
+              <p>[freehand]</p>
             </div>
           </div>
 
           <div class="works-small-item">
-            <img src="./work-small-2.JPG" alt="">
+            <img src="./work-small-2.JPG" alt="TRIBAL BIT S">
             <div class="works-small-text">
-              <h3>Название</h3>
-              <p>Описание</p>
+              <h3>TRIBAL BIT S</h3>
+              <p>[according to the sketch]</p>
             </div>
           </div>
 
           <div class="works-small-item">
-           <img src="./work-small-3.JPG" alt="">
+            <img src="./work-small-3.JPG" alt="METADARK PEAKs">
             <div class="works-small-text">
-              <h3>Название</h3>
-              <p>Описание</p>
+              <h3>METADARK PEAKs</h3>
+              <p>[freehand]</p>
             </div>
           </div>
 
