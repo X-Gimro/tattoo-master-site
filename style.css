@@ -183,22 +183,42 @@ html {
 }
 
 /* ===== SOCIAL ===== */
+
 .social-hero {
-  display: flex;
-  justify-content: center;
-  margin: 60px auto;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
 }
 
+/* КАРТИНКА — БЕЗ ОБРЕЗКИ */
 .social-hero__image {
-  width: 700px;
-  height: auto;
+  width: 100%;
+  max-width: 1035px;
   display: block;
+  margin: 0 auto;
+}
 
-  border-radius: 24px;
+/* ТЕКСТ ПОВЕРХ */
+.social-hero__text {
+  position: absolute;
 
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.08),
-    0 30px 60px rgba(0, 0, 0, 0.12);
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  z-index: 2;
+
+  font-family: 'Actay', sans-serif;
+  color: black;
+  letter-spacing: 1px;
+}
+
+/* ВСЕ СТРОКИ ОДИНАКОВЫЕ */
+.social-hero__text p {
+  margin: 6px 0;
+  font-size: 32px;
+  letter-spacing: 1px;
 }
 
 /* ===== SKETCHES ===== */
@@ -291,8 +311,6 @@ html {
   height: 499px;
   padding: 10px;
 }
-
-/* ❌ УБРАЛИ ТЕКСТ У 3 КАРТОЧКИ */
 
 /* список справа */
 .sketch-list {

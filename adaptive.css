@@ -527,3 +527,8 @@
     border-radius: 12px;
   }
 }
+
+.social-hero {
+  height: 950px !important;
+  margin-bottom: 100px !important;
+}
