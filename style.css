@@ -158,7 +158,6 @@ html {
     0 18px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== DETAILS ===== */
 /* ===== DETAILS PAGE ===== */
 html,
 body {
@@ -541,7 +540,7 @@ body {
 /* КАРТИНКА — БЕЗ ОБРЕЗКИ */
 .social-hero__image {
   width: 100%;
-  max-width: 1035px;
+  max-width: 950px;
   display: block;
   margin: 0 auto;
 }
