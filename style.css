@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'InterMedium';
+  src: url('./fonts/Inter-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* === БАЗА === */
 * {
   margin: 0;
@@ -48,6 +55,9 @@ html {
 .header__logo {
   position: absolute;
   left: 40px;
+
+  letter-spacing: 0.5px;
+  font-family: 'InterMedium', sans-serif; /* ← ВОТ ГЛАВНОЕ */
   font-size: 26px;
 }
 
