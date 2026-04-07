@@ -839,3 +839,12 @@ body {
 
   z-index: -1;
 }
+.social-link {
+  color: inherit;          /* тот же цвет */
+  text-decoration: none;   /* убрать подчеркивание */
+  cursor: pointer;
+}
+
+.social-link:hover {
+  opacity: 0.7;            /* лёгкий эффект */
+}

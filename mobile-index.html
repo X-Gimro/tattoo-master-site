@@ -11,35 +11,55 @@
 
 <body>
 
+<!-- редирект на десктоп -->
 <script>
-  // если открыли на ПК → перекидываем обратно
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 768 && !window.location.href.includes('mobile')) {
     window.location.replace('index.html');
   }
 </script>
 
 <div class="m-page">
 
-  <!-- ШАПКА -->
-  <header class="m-header">
-    <div class="m-header__logo">loraxultrasound.tatt</div>
-  </header>
+  <!-- ЛОГО СЛЕВА -->
+  <img src="./logo.png" class="m-logo">
 
-  <!-- HERO -->
-  <section class="m-hero">
-    <h1 class="m-hero__title">Tattoo artist</h1>
-  </section>
+  <!-- ШАПКА -->
+<header class="m-header"></header>
 
   <!-- РАБОТЫ -->
   <section class="m-works">
-    <h2 class="m-title">Работы</h2>
 
     <div class="m-works__list">
-      <!-- сюда потом вставим карточки -->
+
+      <div class="m-card">
+        <img src="./work-big.JPG">
+        <h3>SPIKEs & CROSSEs</h3>
+        <p>[home freehand ://]</p>
+      </div>
+
+      <div class="m-card">
+        <img src="./work-small-1.JPG">
+        <h3>STARs BRITHMARK</h3>
+        <p>[freehand]</p>
+      </div>
+
+      <div class="m-card">
+        <img src="./work-small-2.JPG">
+        <h3>TRIBAL BIT S</h3>
+        <p>[according to the sketch]</p>
+      </div>
+
+      <div class="m-card">
+        <img src="./work-small-3.JPG">
+        <h3>METADARK PEAKs</h3>
+        <p>[freehand]</p>
+      </div>
+
     </div>
+
   </section>
 
-  <!-- КНОПКИ -->
+  <!-- НИЖНЕЕ МЕНЮ -->
   <nav class="m-nav">
     <a href="mobile-index.html">главная</a>
     <a href="mobile-details.html">работы</a>
@@ -48,6 +68,26 @@
   </nav>
 
 </div>
+
+<!-- АНИМАЦИЯ СКРОЛЛА -->
+<script>
+let lastScroll = 0;
+const nav = document.querySelector('.m-nav');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    nav.style.transform = 'translateY(120%)';
+    nav.style.opacity = '0';
+  } else {
+    nav.style.transform = 'translateY(0)';
+    nav.style.opacity = '1';
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
 
 </body>
 </html>
