@@ -815,3 +815,27 @@ body {
 .sketches-subtitle-link:hover {
   opacity: 0.7;
 }
+
+#works {
+  position: relative;
+  z-index: 1;
+}
+
+#works::before {
+  content: "";
+  position: absolute;
+
+  top: 80px;
+  left: 800px;
+  transform: translateX(-50%);
+
+  width: 1000px; /* ← увеличили ширину */
+  height: 700px;
+
+  background: url('./linogravyura.PNG') no-repeat center;
+  background-size: contain;
+
+  opacity: 1;
+
+  z-index: -1;
+}
