@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>tattoo mobile</title>
 
   <link rel="stylesheet" href="mobile-style.css">
@@ -11,81 +10,69 @@
 
 <body>
 
-<!-- редирект на десктоп -->
-<script>
-  if (window.innerWidth > 768 && !window.location.href.includes('mobile')) {
-    window.location.replace('index.html');
-  }
-</script>
+<!-- ШАПКА -->
+<header class="header">
+  <div class="header__title">loraxultrasound.tatt</div>
+</header>
 
-<div class="m-page">
+<!-- ЛОГО СЛЕВА -->
+<img src="./logo.png" class="side-logo">
 
-  <!-- ЛОГО СЛЕВА -->
-  <img src="./logo.png" class="m-logo">
+<!-- КОНТЕНТ -->
+<main class="content">
 
-  <!-- ШАПКА -->
-<header class="m-header"></header>
+  <div class="card" style="--w:75%;">
+    <img src="./work-big.JPG">
+    <h3>SPIKEs & CROSSEs</h3>
+    <p>[home freehand ://]</p>
+  </div>
 
-  <!-- РАБОТЫ -->
-  <section class="m-works">
+  <div class="card" style="--w:65%;">
+    <img src="./work-small-1.JPG">
+    <h3>STARs BRITHMARK</h3>
+    <p>[freehand]</p>
+  </div>
 
-    <div class="m-works__list">
+  <div class="card" style="--w:70%;">
+    <img src="./work-small-2.JPG">
+    <h3>TRIBAL BIT S</h3>
+    <p>[according to the sketch]</p>
+  </div>
 
-      <div class="m-card">
-        <img src="./work-big.JPG">
-        <h3>SPIKEs & CROSSEs</h3>
-        <p>[home freehand ://]</p>
-      </div>
+  <div class="card" style="--w:68%;">
+    <img src="./work-small-3.JPG">
+    <h3>METADARK PEAKs</h3>
+    <p>[freehand]</p>
+  </div>
 
-      <div class="m-card">
-        <img src="./work-small-1.JPG">
-        <h3>STARs BRITHMARK</h3>
-        <p>[freehand]</p>
-      </div>
+</main>
 
-      <div class="m-card">
-        <img src="./work-small-2.JPG">
-        <h3>TRIBAL BIT S</h3>
-        <p>[according to the sketch]</p>
-      </div>
+<!-- МЕНЮ -->
+<nav class="nav">
+  <a href="#">главная</a>
+  <a href="#">эскизы</a>
+  <a href="#">соцсети</a>
+</nav>
 
-      <div class="m-card">
-        <img src="./work-small-3.JPG">
-        <h3>METADARK PEAKs</h3>
-        <p>[freehand]</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- НИЖНЕЕ МЕНЮ -->
-  <nav class="m-nav">
-    <a href="mobile-index.html">главная</a>
-    <a href="mobile-details.html">работы</a>
-    <a href="mobile-sketches.html">эскизы</a>
-    <a href="mobile-social.html">соцсети</a>
-  </nav>
-
-</div>
-
-<!-- АНИМАЦИЯ СКРОЛЛА -->
+<!-- СКРИПТ -->
 <script>
 let lastScroll = 0;
-const nav = document.querySelector('.m-nav');
+
+const header = document.querySelector('.header');
+const nav = document.querySelector('.nav');
 
 window.addEventListener('scroll', () => {
-  const currentScroll = window.scrollY;
+  const current = window.scrollY;
 
-  if (currentScroll > lastScroll && currentScroll > 50) {
-    nav.style.transform = 'translateY(120%)';
-    nav.style.opacity = '0';
+  if (current > lastScroll && current > 50) {
+    header.classList.add('hide');
+    nav.classList.add('hide');
   } else {
-    nav.style.transform = 'translateY(0)';
-    nav.style.opacity = '1';
+    header.classList.remove('hide');
+    nav.classList.remove('hide');
   }
 
-  lastScroll = currentScroll;
+  lastScroll = current;
 });
 </script>
 
