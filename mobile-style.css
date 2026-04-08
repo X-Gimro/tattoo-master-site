@@ -1,4 +1,15 @@
-/* СБРОС */
+@font-face {
+  font-family: 'Actay';
+  src: url('./Actay-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter-Medium.otf') format('opentype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +18,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Actay', sans-serif;
 }
 
 body {
@@ -15,18 +27,16 @@ body {
   overflow-x: hidden;
 }
 
-/* ========================= */
 /* ШАПКА */
-/* ========================= */
 
 .header {
   position: fixed;
 
   top: 20px;
   left: 16px;
-  right: 16px; /* 👈 делает широкой */
+  right: 16px; 
 
-  height: 80px; /* 👈 выше (было ~65) */
+  height: 80px; 
 
   background: #e5e5e5;
 
@@ -45,15 +55,13 @@ body {
 .header__title {
   font-size: 20px;
   font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
 
-  margin-left: 20px; /* 👈 ВОТ ЭТО ДВИГАЕТ */
+  margin-left: 20px; 
 }
 
-
-
-/* ========================= */
 /* ЛОГО СЛЕВА */
-/* ========================= */
 
 .side-logo {
   position: fixed;
@@ -64,15 +72,13 @@ body {
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: left center;
 
-  width: 700px; /* 👈 главный параметр */
+  width: 700px;
 
   z-index: 50;
   pointer-events: none;
 }
 
-/* ========================= */
 /* КОНТЕНТ */
-/* ========================= */
 
 .content {
   padding: 80px 16px 120px;
@@ -81,9 +87,7 @@ body {
   flex-direction: column;
 }
 
-/* ========================= */
 /* КАРТОЧКИ (БАЗА) */
-/* ========================= */
 
 .card {
   opacity: 0;
@@ -122,9 +126,7 @@ body {
   color: #666;
 }
 
-/* ========================= */
 /* ИНДИВИДУАЛЬНЫЕ КАРТОЧКИ */
-/* ========================= */
 
 /* 1 */
 .card-1 img {
@@ -188,9 +190,7 @@ body {
   margin-left: auto;
 }
 
-/* ========================= */
 /* НИЖНЕЕ МЕНЮ */
-/* ========================= */
 
 .nav {
   position: fixed;
@@ -218,9 +218,7 @@ body {
   color: #000;
 }
 
-/* ========================= */
 /* АНИМАЦИЯ СКРОЛЛА */
-/* ========================= */
 
 .header.hide {
   transform: translate(-50%, -120%);
@@ -232,9 +230,7 @@ body {
   opacity: 0;
 }
 
-/* ========================= */
 /* СТРАНИЦА ЭСКИЗОВ */
-/* ========================= */
 
 .sketches {
   padding-top: 100px;
@@ -290,9 +286,7 @@ body {
   padding: 20px 16px 120px;
 }
 
-/* ========================= */
 /* PRICES PAGE */
-/* ========================= */
 
 .prices-page {
   background: #fff;
@@ -304,9 +298,7 @@ body {
   flex-direction: column;
 }
 
-/* ========================= */
 /* КАРТОЧКА */
-/* ========================= */
 
 .price-card {
   margin-top: 40px;
@@ -323,9 +315,7 @@ body {
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
-/* ========================= */
 /* ДВА ТЕКСТА ПОД КАРТИНКОЙ */
-/* ========================= */
 
 .price-row {
   display: flex;
@@ -339,14 +329,12 @@ body {
 
 /* правый блок */
 .price-row .right {
-  margin-left: auto; /* 👈 ключ */
+  margin-left: auto; 
   text-align: right;
   max-width: 40%;
 }
 
-/* ========================= */
 /* ТЕКСТ */
-/* ========================= */
 
 .price-row h3,
 .price-single h3 {
@@ -371,18 +359,14 @@ body {
   max-width: 260px;
 }
 
-/* ========================= */
 /* СТАРАЯ ЦЕНА */
-/* ========================= */
 
 .old {
   text-decoration: line-through;
   opacity: 0.5;
 }
 
-/* ========================= */
 /* ИНДИВИДУАЛЬНАЯ ПОДГОНКА */
-/* ========================= */
 
 /* 1 карточка */
 .card-1 .right {
@@ -399,4 +383,55 @@ body {
 .card-3 .right {
   margin-top: 40px;
   padding-right: 6px;
+}
+
+/* SOCIAL PAGE */
+
+.social {
+  padding: 40px 16px 120px;
+}
+
+/* карточка */
+.social-card {
+  position: relative;
+  height: 700px; 
+  overflow: hidden;
+}
+
+/* КАРТИНКА*/
+.social-card img {
+  position: absolute;
+
+  width: 550px;
+  height: 367px;
+
+  top: 75px;
+  left: -85px;
+
+  transform: rotate(90deg);
+
+  border-radius: 0;
+}
+
+/* текст поверх */
+.social-overlay {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  text-align: center;
+}
+
+/* ссылки */
+.social-overlay a {
+  white-space: nowrap;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
 }

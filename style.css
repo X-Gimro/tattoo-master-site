@@ -57,7 +57,7 @@ html {
   left: 40px;
 
   letter-spacing: 0.5px;
-  font-family: 'InterMedium', sans-serif; /* ← ВОТ ГЛАВНОЕ */
+  font-family: 'InterMedium', sans-serif; 
   font-size: 26px;
 }
 
@@ -316,7 +316,7 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* ПЕРВАЯ КАРТОЧКА */
+/* 1 КАРТОЧКА */
 .details-item--1 {
   top: 0;
   left: 120px;
@@ -371,7 +371,7 @@ body {
   margin-right: 8px;
 }
 
-/* ВТОРАЯ КАРТОЧКА */
+/* 2 КАРТОЧКА */
 .details-item--2 {
   top: 0;
   right: 120px;
@@ -421,7 +421,7 @@ body {
   white-space: nowrap;
 }
 
-/* ТРЕТЬЯ КАРТОЧКА */
+/* 3 КАРТОЧКА */
 .details-meta--3 {
   position: relative;
   margin-top: 22px;
@@ -476,7 +476,7 @@ body {
   white-space: nowrap;
 }
 
-/* ЧЕТВЕРТАЯ КАРТОЧКА */
+/* 4 КАРТОЧКА */
 .details-meta--4 {
   position: relative;
   margin-top: 22px;
@@ -601,7 +601,7 @@ body {
 .sketches-grid {
   position: relative;
   width: 1218px;
-  min-height: 3100px; /* вместо height */
+  min-height: 3100px; 
   margin: 60px auto;
 }
 
@@ -737,7 +737,7 @@ body {
 /* 7 */
 .sketch-card--7 {
   top: 1700px;
-  left: 1px; /* ← как в макете */
+  left: 1px; 
   width: 530px;
 }
 
@@ -839,7 +839,7 @@ body {
   left: 800px;
   transform: translateX(-50%);
 
-  width: 1000px; /* ← увеличили ширину */
+  width: 1000px; 
   height: 700px;
 
   background: url('./linogravyura.PNG') no-repeat center;
@@ -850,11 +850,11 @@ body {
   z-index: -1;
 }
 .social-link {
-  color: inherit;          /* тот же цвет */
-  text-decoration: none;   /* убрать подчеркивание */
+  color: inherit;         
+  text-decoration: none;   
   cursor: pointer;
 }
 
 .social-link:hover {
-  opacity: 0.7;            /* лёгкий эффект */
+  opacity: 0.7;         
 }
