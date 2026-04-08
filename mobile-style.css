@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #fff;
   font-family: Arial, sans-serif;
@@ -228,3 +232,171 @@ body {
   opacity: 0;
 }
 
+/* ========================= */
+/* СТРАНИЦА ЭСКИЗОВ */
+/* ========================= */
+
+.sketches {
+  padding-top: 100px;
+}
+
+/* верх */
+.sketches__top {
+  margin-bottom: 20px;
+}
+
+.sketches__sub {
+  margin-top: 10px;
+  font-size: 20px;
+  text-decoration: underline;
+  color: #333;
+}
+
+.sketches__sub:hover {
+  opacity: 0.6;
+}
+
+.sketches__title {
+  margin-top: 14px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* карточка */
+.sketch {
+  margin-top: 30px;
+}
+
+.sketch img {
+  width: 100%;
+  border-radius: 24px;
+
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* текст */
+.sketch h3 {
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sketch p {
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.sketches-page .content {
+  padding: 20px 16px 120px;
+}
+
+/* ========================= */
+/* PRICES PAGE */
+/* ========================= */
+
+.prices-page {
+  background: #fff;
+}
+
+.prices {
+  padding: 80px 16px 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================= */
+/* КАРТОЧКА */
+/* ========================= */
+
+.price-card {
+  margin-top: 40px;
+}
+
+.price-card:first-child {
+  margin-top: 20px;
+}
+
+/* картинка */
+.price-card img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* ========================= */
+/* ДВА ТЕКСТА ПОД КАРТИНКОЙ */
+/* ========================= */
+
+.price-row {
+  display: flex;
+  margin-top: 12px;
+}
+
+/* левый блок */
+.price-row .left {
+  max-width: 65%;
+}
+
+/* правый блок */
+.price-row .right {
+  margin-left: auto; /* 👈 ключ */
+  text-align: right;
+  max-width: 40%;
+}
+
+/* ========================= */
+/* ТЕКСТ */
+/* ========================= */
+
+.price-row h3,
+.price-single h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.price-row p,
+.price-single p {
+  font-size: 16px;
+  margin-top: 4px;
+  letter-spacing: 0.2px;
+}
+
+/* ========================= */
+/* ОДНА ПОЗИЦИЯ */
+/* ========================= */
+
+.price-single {
+  margin-top: 12px;
+  max-width: 260px;
+}
+
+/* ========================= */
+/* СТАРАЯ ЦЕНА */
+/* ========================= */
+
+.old {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* ========================= */
+/* ИНДИВИДУАЛЬНАЯ ПОДГОНКА */
+/* ========================= */
+
+/* 1 карточка */
+.card-1 .right {
+  margin-top: 20px;
+}
+
+/* 2 карточка */
+.card-2 .right {
+  margin-top: 30px;
+   padding-right: -90px;
+}
+
+/* 3 карточка */
+.card-3 .right {
+  margin-top: 40px;
+  padding-right: 6px;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>model prices</title>
+
+  <link rel="stylesheet" href="mobile-style.css">
+</head>
+
+<body class="prices-page">
+
+<!-- НИК -->
+<div class="header__title">loraxultrasound.tatt</div>
+
+<!-- КОНТЕНТ -->
+<main class="prices">
+
+  <!-- 1 -->
+  <div class="price-card card-1">
+    <img src="./onedetails.JPG">
+
+    <div class="price-row">
+      <div class="left">
+        <h3>TS-038M Chelsea Smile</h3>
+        <p>[<span class="old">15 000р.</span>–10 000р.]</p>
+      </div>
+
+      <div class="right">
+        <h3>TS-039S 76</h3>
+        <p>[<span class="old">8 000р.</span>–4 000р.]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="price-card card-2">
+    <img src="./twodetails.JPG">
+
+    <div class="price-row">
+      <div class="left">
+        <h3>TS-031L Double Tribal</h3>
+        <p>[<span class="old">17 000р.</span>–12 000р.]</p>
+      </div>
+
+      <div class="right">
+        <h3>TS-16S Skull</h3>
+        <p>[<span class="old">10 000р.</span>–6 000р.]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="price-card card-3">
+    <img src="./threedetails.JPG">
+
+    <div class="price-row">
+      <div class="left">
+        <h3>TS-048S Pink Stars</h3>
+        <p>[<span class="old">7 000р.</span>–4 000р.]</p>
+      </div>
+
+      <div class="right">
+        <h3>TS-047M My Little Ferrari</h3>
+        <p>[<span class="old">17 000р.</span>–10 000р.]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="price-card card-4">
+    <img src="./fhordetails.JPG">
+
+    <div class="price-single">
+      <h3>TS-55S Flash Pack</h3>
+      <p>[all <span class="old">8 000р.</span>–6 000р.]</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- МЕНЮ -->
+<nav class="nav">
+  <a href="mobile-index.html">главная</a>
+  <a href="mobile-sketches.html">эскизы</a>
+  <a href="mobile-social.html">соцсети</a>
+</nav>
+
+<!-- СКРОЛЛ -->
+<script>
+let scrollTimeout;
+const nav = document.querySelector('.nav');
+
+window.addEventListener('scroll', () => {
+  nav.classList.add('hide');
+
+  clearTimeout(scrollTimeout);
+
+  scrollTimeout = setTimeout(() => {
+    nav.classList.remove('hide');
+  }, 200);
+});
+</script>
+
+</body>
+</html>
