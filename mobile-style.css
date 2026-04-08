@@ -1,3 +1,4 @@
+/* СБРОС */
 * {
   margin: 0;
   padding: 0;
@@ -7,71 +8,183 @@
 body {
   background: #fff;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
+/* ========================= */
 /* ШАПКА */
+/* ========================= */
+
 .header {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
 
-  transition: 0.3s;
-  z-index: 10;
+  top: 20px;
+  left: 16px;
+  right: 16px; /* 👈 делает широкой */
+
+  height: 80px; /* 👈 выше (было ~65) */
+
+  background: #e5e5e5;
+
+  border-radius: 50px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+  z-index: 100;
 }
 
 .header__title {
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 500;
+
+  margin-left: 20px; /* 👈 ВОТ ЭТО ДВИГАЕТ */
 }
 
+
+
+/* ========================= */
 /* ЛОГО СЛЕВА */
+/* ========================= */
+
 .side-logo {
   position: fixed;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
 
-  height: 80vh;
+  top: 760px;
+  left: 40px;
+
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+
+  width: 700px; /* 👈 главный параметр */
+
+  z-index: 50;
   pointer-events: none;
 }
 
+/* ========================= */
 /* КОНТЕНТ */
+/* ========================= */
+
 .content {
   padding: 80px 16px 120px;
+
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
-/* КАРТОЧКИ */
+/* ========================= */
+/* КАРТОЧКИ (БАЗА) */
+/* ========================= */
+
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .card img {
-  width: var(--w, 70%);
-  height: auto;
-
-  margin-left: auto;
-
-  border-radius: 20px;
   display: block;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ТЕКСТ */
+.card h3,
+.card p {
+  margin-top: 10px;
 }
 
 .card h3 {
-  width: var(--w, 70%);
-  margin-left: auto;
-  margin-top: 12px;
-
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .card p {
-  width: var(--w, 70%);
-  margin-left: auto;
-  margin-top: 4px;
-
   font-size: 14px;
   color: #666;
 }
 
-/* МЕНЮ */
+/* ========================= */
+/* ИНДИВИДУАЛЬНЫЕ КАРТОЧКИ */
+/* ========================= */
+
+/* 1 */
+.card-1 img {
+  width: 260px;
+  height: auto;
+
+  margin-left: auto;
+}
+
+.card-1 h3,
+.card-1 p {
+  width: 260px;
+  margin-left: auto;
+}
+
+
+/* 2 */
+.card-2 img {
+  width: 260px;
+  height: auto;
+
+  margin-left: auto;
+  margin-top: 40px;
+}
+
+.card-2 h3,
+.card-2 p {
+  width: 260px;
+  margin-left: auto;
+}
+
+
+/* 3 */
+.card-3 img {
+  width: 260px;
+  height: auto;
+
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.card-3 h3,
+.card-3 p {
+  width: 260px;
+  margin-left: auto;
+}
+
+
+/* 4 */
+.card-4 img {
+  width: 260px;
+  height: auto;
+
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.card-4 h3,
+.card-4 p {
+  width: 260px;
+  margin-left: auto;
+}
+
+/* ========================= */
+/* НИЖНЕЕ МЕНЮ */
+/* ========================= */
+
 .nav {
   position: fixed;
   bottom: 20px;
@@ -79,22 +192,29 @@ body {
   transform: translateX(-50%);
 
   display: flex;
-  gap: 20px;
+  gap: 26px;
 
   background: #e5e5e5;
-  padding: 14px 26px;
+  padding: 18px 28px;
   border-radius: 30px;
 
-  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  transition: transform 0.5s ease, opacity 0.4s ease;
+
+  z-index: 100;
 }
 
 .nav a {
+  font-size: 22px; 
   text-decoration: none;
   color: #000;
-  font-size: 14px;
 }
 
-/* АНИМАЦИЯ */
+/* ========================= */
+/* АНИМАЦИЯ СКРОЛЛА */
+/* ========================= */
+
 .header.hide {
   transform: translate(-50%, -120%);
   opacity: 0;
@@ -104,3 +224,4 @@ body {
   transform: translate(-50%, 120%);
   opacity: 0;
 }
+

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>tattoo mobile</title>
 
   <link rel="stylesheet" href="mobile-style.css">
@@ -11,9 +12,8 @@
 <body>
 
 <!-- ШАПКА -->
-<header class="header">
   <div class="header__title">loraxultrasound.tatt</div>
-</header>
+
 
 <!-- ЛОГО СЛЕВА -->
 <img src="./logo.png" class="side-logo">
@@ -21,25 +21,29 @@
 <!-- КОНТЕНТ -->
 <main class="content">
 
-  <div class="card" style="--w:75%;">
+  <!-- КАРТОЧКА 1 -->
+  <div class="card card-1">
     <img src="./work-big.JPG">
     <h3>SPIKEs & CROSSEs</h3>
     <p>[home freehand ://]</p>
   </div>
 
-  <div class="card" style="--w:65%;">
+  <!-- КАРТОЧКА 2 -->
+  <div class="card card-2">
     <img src="./work-small-1.JPG">
     <h3>STARs BRITHMARK</h3>
     <p>[freehand]</p>
   </div>
 
-  <div class="card" style="--w:70%;">
+  <!-- КАРТОЧКА 3 -->
+  <div class="card card-3">
     <img src="./work-small-2.JPG">
     <h3>TRIBAL BIT S</h3>
     <p>[according to the sketch]</p>
   </div>
 
-  <div class="card" style="--w:68%;">
+  <!-- КАРТОЧКА 4 -->
+  <div class="card card-4">
     <img src="./work-small-3.JPG">
     <h3>METADARK PEAKs</h3>
     <p>[freehand]</p>
@@ -47,33 +51,48 @@
 
 </main>
 
-<!-- МЕНЮ -->
+<!-- НИЖНЕЕ МЕНЮ -->
 <nav class="nav">
-  <a href="#">главная</a>
-  <a href="#">эскизы</a>
-  <a href="#">соцсети</a>
+  <a href="mobile-index.html">главная</a>
+  <a href="mobile-sketches.html">эскизы</a>
+  <a href="mobile-social.html">соцсети</a>
 </nav>
 
-<!-- СКРИПТ -->
+<!-- СКРЫТИЕ ШАПКИ И МЕНЮ ПРИ СКРОЛЛЕ -->
 <script>
-let lastScroll = 0;
+let scrollTimeout;
 
-const header = document.querySelector('.header');
 const nav = document.querySelector('.nav');
 
 window.addEventListener('scroll', () => {
-  const current = window.scrollY;
+  // при любом скролле — прячем
+  nav.classList.add('hide');
 
-  if (current > lastScroll && current > 50) {
-    header.classList.add('hide');
-    nav.classList.add('hide');
-  } else {
-    header.classList.remove('hide');
+  // сбрасываем таймер
+  clearTimeout(scrollTimeout);
+
+  // когда скролл остановился
+  scrollTimeout = setTimeout(() => {
     nav.classList.remove('hide');
-  }
-
-  lastScroll = current;
+  }, 300); // 👈 время "остановки"
 });
+</script>
+
+<!-- АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК -->
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
