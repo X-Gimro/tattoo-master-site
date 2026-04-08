@@ -100,9 +100,12 @@ body {
 }
 
 /* ТЕКСТ */
-.card h3,
-.card p {
+.card h3 {
   margin-top: 10px;
+}
+
+.card p {
+  margin-top: 4px; 
 }
 
 .card h3 {
