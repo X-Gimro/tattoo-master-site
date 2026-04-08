@@ -286,7 +286,9 @@ body {
   padding: 20px 16px 120px;
 }
 
+/* ========================= */
 /* PRICES PAGE */
+/* ========================= */
 
 .prices-page {
   background: #fff;
@@ -298,10 +300,13 @@ body {
   flex-direction: column;
 }
 
+/* ========================= */
 /* КАРТОЧКА */
+/* ========================= */
 
 .price-card {
-  margin-top: 40px;
+  position: relative;
+  margin-top: 60px;
 }
 
 .price-card:first-child {
@@ -315,48 +320,27 @@ body {
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
-/* ДВА ТЕКСТА ПОД КАРТИНКОЙ */
+/* ========================= */
+/* ТЕКСТОВЫЕ БЛОКИ */
+/* ========================= */
 
-.price-row {
-  display: flex;
-  margin-top: 12px;
+.text-block {
+  position: absolute;
+  max-width: 240px;
 }
 
-/* левый блок */
-.price-row .left {
-  max-width: 65%;
-}
-
-/* правый блок */
-.price-row .right {
-  margin-left: auto; 
-  text-align: right;
-  max-width: 40%;
-}
-
-/* ТЕКСТ */
-
-.price-row h3,
-.price-single h3 {
+/* текст */
+.text-block h3 {
   font-size: 18px;
   font-weight: 400;
   margin: 0;
 }
 
-.price-row p,
-.price-single p {
+.text-block p {
   font-size: 16px;
   margin-top: 4px;
   letter-spacing: 0.2px;
-}
-
-/* ========================= */
-/* ОДНА ПОЗИЦИЯ */
-/* ========================= */
-
-.price-single {
-  margin-top: 12px;
-  max-width: 260px;
+  
 }
 
 /* СТАРАЯ ЦЕНА */
@@ -366,23 +350,56 @@ body {
   opacity: 0.5;
 }
 
-/* ИНДИВИДУАЛЬНАЯ ПОДГОНКА */
+/* ПОЗИЦИОНИРОВАНИЕ 
 
 /* 1 карточка */
-.card-1 .right {
-  margin-top: 20px;
+.card-1 .block-1 {
+  left: 0;
+  bottom: -70px;
+}
+
+.card-1 .block-2 {
+  right: 20px;
+  bottom: -100px;
+  text-align: right;
 }
 
 /* 2 карточка */
-.card-2 .right {
-  margin-top: 30px;
-   padding-right: -90px;
+.card-2 .block-3 {
+  left: 0;
+  bottom: -70px;
+}
+
+.card-2 .block-4 {
+  right: 20px;
+  bottom: -100px;
+  text-align: right;
 }
 
 /* 3 карточка */
-.card-3 .right {
-  margin-top: 40px;
-  padding-right: 6px;
+.card-3 .block-5 {
+  left: 0;
+  bottom: -70px;
+}
+
+.card-3 .block-6 {
+  right: 20px;
+  bottom: -130px;
+  text-align: right;
+}
+
+/* 4 карточка */
+.card-4 .block-7 {
+  left: 0;
+  bottom: -70px;
+}
+
+/* ========================= */
+/* ОТСТУПЫ ЧТОБЫ НЕ НАЛЕЗАЛО */
+/* ========================= */
+
+.price-card {
+  margin-bottom: 120px;
 }
 
 /* SOCIAL PAGE */
